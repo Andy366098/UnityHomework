@@ -34,10 +34,10 @@ public class Main : MonoBehaviour
             GameObject go = objectPool.LoadData1();
             if (go != null)
             {
-                go.transform.position = new Vector3(-15.0f, 2.0f, -15.0f);
-                go.SetActive(true);
+                go.transform.position = new Vector3(-15.0f, 2.0f, -15.0f);      //設置初始位置
+                go.SetActive(true);     //顯示物件
                 //mLoadedObjects.Add(go);
-                go.GetComponent<CubeMove>().InitCallBack(LoadedObjectFinish);
+                go.GetComponent<CubeMove>().InitCallBack(LoadedObjectFinish);   //註冊CallBack以便在進入終點的Trigger時從資源池Unload
             }
         }
 
