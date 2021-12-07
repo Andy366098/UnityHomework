@@ -28,11 +28,12 @@ public class CubeMove : MonoBehaviour
             Vector3 pointPos = points[target].position;
             Vector3 currentPos = transform.position;
             Vector3 vec = pointPos - currentPos;
+            vec.y = 0.0f;
             transform.forward = vec;
             float vDist = vec.magnitude;
             vMove = transform.forward * 10 * Time.deltaTime;
             transform.position += vMove;
-            if (vDist < 2.0f)
+            if (vDist < 1.0f)
             {
                 target++;
             }
